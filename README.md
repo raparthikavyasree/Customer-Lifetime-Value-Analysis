@@ -1,214 +1,87 @@
-# Customer-Lifetime-Value-Analysis
+# Customer Lifetime Value (CLV) Analysis
 
-![Customer-Lifetime-Value-Analysis](https://github.com/M0hamedIbrahim1/Customer-Lifetime-Value-Analysis/blob/main/Dataset/what-is-customer-lifetime-value.jpg)
-
--
-Customer lifetime value (CLV) can help you to answers the most important questions about sales to every company:
-
-How to Identify the most profitable customers?
-
-How can a company offer the best product and make the most money?
-
-How to segment profitable customers?
-
-How much budget need to spend to acquire customers?
-
-## Table of Contents
-
-1. [Customer Lifetime Value Analysis](#customer-lifetime-value-analysis)
-    - [Overview](#overview)
-    - [Key Questions Addressed](#key-questions-addressed)
-    - [Getting Started](#getting-started)
-        - [Importing the Necessary Libraries](#importing-the-necessary-libraries)
-        - [Loading Data](#loading-data)
-        - [Data Processing](#data-processing)
-        - [Handling Missing Data](#missing-data)
-        - [Dealing with Duplicated Rows](#duplicated-rows)
-        - [Converting Data Types](#converting-dtypes)
-        - [Treating Cancelled Transactions](#treating-cancelled-transactions)
-
-2. [EDA - Customer Lifetime Value](#eda-customer-lifetime-value)
-    - [CLTV Formula](#cltv-formula)
-        - [Calculate Average Order Value](#1-calculate-average-order-value)
-        - [Calculate Purchase Frequency](#2-calculate-purchase-frequency)
-        - [Calculate Repeat Rate and Churn Rate](#3-calculate-repeat-rate-and-churn-rate)
-        - [Churn Rate](#churn-rate)
-        - [Calculate Profit Margin](#4-calculate-profit-margin)
-        - [Calculate Customer Lifetime Value](#5-calculate-customer-lifetime-value)
-    - [Customer Segmentation](#customer-segmentation)
-    - [Customers With High Transactions](#customers-with-high-transactions)
-    - [Geographic Analysis](#geographic-analysis)
-        - [TOP 10 Countries in Revenue of Purchase](#top-10-countries-in-revenue-of-purchase)
-        - [In Which Country Do We Have More Customers?](#in-which-country-do-we-have-more-customers)
-        - [Countries That Have High Cancellation of Orders](#countries-that-have-high-cancellation-of-orders)
-        - [Countries with Low Cancellation of Orders](#countries-with-low-cancellation-of-orders)
-
-3. [Time Series Analysis](#time-series-analysis)
-    - [Any Patterns or Trends in Count of Orders](#any-patterns-or-trends-in-count-of-orders)
-    - [Month VS Total Purchase](#month-vs-total-purchase)
-    - [Month with High Cancellation of Orders](#month-with-high-cancellation-of-orders)
-
-4. [Stock Analysis](#stock-analysis)
-    - [Top 10 Stocks With High Orders](#top-10-stocks-with-high-orders)
-
-5. [Descriptions Analysis](#descriptions-analysis)
-    - [How Many Unique Descriptions Do We Have?](#how-many-unique-descriptions-do-we-have)
-    - [Which Are the Most Common Descriptions?](#which-are-the-most-common-descriptions)
-    - [Which Product Has Achieved the Highest Sales?](#which-product-has-achieved-the-highest-sales)
-
-6. [Conclusion](#conclusion)
 ## Overview
 
-Customer lifetime value (CLV) provides insights into how profitable customers are to your business over their entire relationship with you. It can help you optimize your sales strategies, improve product offerings, segment customers effectively, and allocate your budget wisely.
+This project presents an end-to-end **Customer Lifetime Value (CLV) Analysis** using Python to uncover actionable business insights from transactional retail data. The analysis focuses on understanding customer purchasing behavior, estimating customer lifetime value, identifying high-value customer segments, and exploring sales trends through exploratory data analysis (EDA) and visualizations.
 
-## Key Questions Addressed
+The project demonstrates how data analytics can support business decisions related to customer retention, marketing strategy, inventory planning, and revenue optimization.
 
-Our analysis answers some of the most critical questions related to customer lifetime value:
+## Objectives
 
-1. **How to Identify the Most Profitable Customers?** - Learn how to distinguish customers who bring the most value to your business.
+The primary objectives of this project are to:
 
-2. **How Can a Company Offer the Best Product and Maximize Revenue?** - Understand how to tailor your product offerings to maximize profitability.
+* Estimate Customer Lifetime Value (CLV) using customer purchase behavior.
+* Identify high-value and repeat customers.
+* Segment customers based on purchasing patterns.
+* Analyze customer churn and repeat purchase behavior.
+* Discover geographic trends in revenue and customer distribution.
+* Explore seasonal sales and transaction patterns.
+* Identify best-selling products and high-demand inventory.
+* Generate business insights to support customer-centric decision-making.
 
-3. **How to Segment Profitable Customers?** - Discover strategies for segmenting customers based on their value to your business.
+## Dataset
 
-4. **How Much Budget Is Needed to Acquire Customers?** - Find out the resources required for customer acquisition while maximizing ROI.
+The analysis is performed on a retail transactions dataset containing customer purchases, product information, order details, quantities, prices, transaction dates, and geographic information. The dataset enables comprehensive analysis of customer behavior, revenue generation, and product performance.
 
-## Getting Started
+## Project Highlights
 
-Follow these steps to begin your journey with our Customer Lifetime Value analysis.
+### Customer Lifetime Value Analysis
 
-### Importing the Necessary Libraries
+* Estimated Customer Lifetime Value (CLV) using business-oriented customer metrics.
+* Evaluated customer profitability through purchase frequency, average order value, churn rate, and profit margin.
+* Identified customers contributing the highest long-term business value.
 
-We'll start by importing the Python libraries required for data analysis and visualization. Make sure you have these libraries installed to run our analysis.
+### Customer Segmentation
 
-### Loading Data
+* Grouped customers based on purchasing behavior and total spending.
+* Distinguished high-value, repeat, and low-value customer segments.
+* Enabled targeted customer retention and marketing strategies.
 
-To perform the analysis, we'll need to load the relevant data. Our dataset provides the foundation for estimating customer lifetime value.
+### Customer Behavior Analysis
 
-### Data Processing
+* Examined purchasing frequency and repeat customer trends.
+* Identified customers with the highest transaction volumes.
+* Analyzed customer engagement and buying patterns.
 
-Data processing is a crucial step in preparing our data for analysis. We'll explore data cleaning, transformations, and feature engineering.
+### Geographic Analysis
 
-### Handling Missing Data
+* Compared revenue generated across different countries.
+* Evaluated customer distribution by region.
+* Analyzed order cancellation patterns across geographic locations.
 
-Missing data can impact the accuracy of our analysis. We'll discuss how we address missing data points in the dataset.
+### Sales Trend Analysis
 
-### Dealing with Duplicated Rows
+* Explored monthly purchasing trends and seasonal demand.
+* Identified periods with peak sales activity.
+* Examined temporal patterns in customer orders and cancellations.
 
-Duplicate rows can skew our analysis results. We'll identify and handle duplicated entries in the data.
+### Product & Inventory Analysis
 
-### Converting Data Types
+* Identified top-selling products based on transaction volume.
+* Analyzed product popularity and purchasing frequency.
+* Evaluated product diversity through description analysis.
 
-Data types play a crucial role in our analysis. We'll ensure that data types are appropriate for our calculations.
+## Key Insights
 
-### Treating Cancelled Transactions
+The analysis provides insights into:
 
-Cancelled transactions can affect our analysis. We'll discuss how we handle these scenarios to get accurate insights into customer lifetime value.
+* Customer profitability and long-term value
+* Revenue contribution by customer segment
+* Repeat purchase and churn behavior
+* Geographic sales performance
+* Seasonal purchasing trends
+* High-performing products and inventory demand
+* Business opportunities for improving customer retention and maximizing revenue
 
-# EDA - Customer Lifetime Value
+## Technologies Used
 
-In the world of business analytics, understanding and calculating Customer Lifetime Value (CLTV) is essential. There are various approaches to calculate CLTV, and each business may have its own perspective on what's suitable. In this section, we will explore one approach.
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
 
-## CLTV Formula
+## Results
 
-The CLTV formula we will explore is as follows:
-
-CLTV = ((Average Order Value x Purchase Frequency) / Churn Rate) x Profit Margin.
-
-### 1. Calculate Average Order Value
-- Explanation of how to calculate Average Order Value goes here.
-
-### 2. Calculate Purchase Frequency
-- Explanation of how to calculate Purchase Frequency goes here.
-
-### 3. Calculate Repeat Rate and Churn Rate
-- Description of how to calculate Repeat Rate and Churn Rate.
-- The percentage of Repeat Rate is: 98.34%.
-
-
-### 4. Calculate Profit Margin
-- Profit Margin represents the percentage of total sales earned as profit. Assuming a 10% profit margin for our business.
-
-### 5. Calculate Customer Lifetime Value
-- The final step is to calculate the Customer Lifetime Value (CLTV) based on the formula above.
-
-This is just one approach to CLTV analysis. Your business may have its own unique considerations and metrics to calculate CLTV effectively.
-## Customer Segmentation
-
-Segmenting your customers based on their total purchase value is a powerful way to understand your customer base and tailor your marketing and business strategies effectively.
-
-## Customers With High Transactions
-
-Identifying and analyzing customers with high transaction volumes is essential for optimizing your sales strategies and ensuring the highest customer satisfaction.
-
-## Geographic Analysis
-
-Geographic analysis provides valuable insights into customer distribution, regional preferences, and the impact of location on business operations.
-
-### TOP 10 Countries in Revenue of Purchase
-
-Identifying the top countries contributing to revenue can help prioritize marketing efforts and expansion strategies.
-
-### In Which Country Do We Have More Customers?
-
-Understanding the distribution of customers across different countries is essential for tailoring marketing campaigns and optimizing customer experiences.
-
-### Countries That Have High Cancellation of Orders
-
-Identifying countries with a high rate of order cancellations can inform strategies for reducing cancellations and improving customer satisfaction.
-
-### Countries with Low Cancellation of Orders
-Highlighting countries with low order cancellation rates can serve as examples of effective business operations and customer satisfaction.
-## Time Series Analysis
-
-Time series analysis involves examining data collected or recorded over time to identify patterns, trends, and insights. This section focuses on understanding temporal aspects of your business data.
-
-### Any Patterns or Trends in Count of Orders?
-
-Analyzing the count of orders over time can reveal trends and patterns that are essential for business planning and decision-making.
-
-### Month VS Total Purchase
-
-Exploring the relationship between months and total purchase can provide insights into monthly variations in sales and revenue.
-
-### Month with High Cancellation of Orders
-Identifying months with a high rate of order cancellations can help improve order fulfillment processes and customer satisfaction.
-## Stock Analysis
-
-Stock analysis is crucial for understanding which products or stock items are in high demand and have a significant impact on your business.
-
-### Top 10 Stocks With High Orders
-
-Identifying the top 10 stock items with the highest number of orders can help you understand product popularity and optimize inventory management.
-## Descriptions Analysis
-
-Analyzing product descriptions can provide valuable insights into the variety and popularity of items in your inventory.
-
-### How Many Unique Descriptions Do We Have?
-
-Identifying the number of unique descriptions can help you understand the diversity of products in your inventory.
-
-### Which Are the Most Common Descriptions?
-
-Determining the most common product descriptions can give you insights into which items are frequently purchased.
-
-### Which Product Has Achieved the Highest Sales?
-
-Finding the product with the highest sales can highlight your best-selling item and inform your inventory and marketing strategies.
-
-## Conclusion
-
-In this project, we have conducted a comprehensive analysis of our business data, focusing on customer lifetime value, customer segmentation, geographic analysis, time series analysis, stock analysis, and product descriptions. This analysis has provided valuable insights into our business operations and customer behavior.
-
-**Key Findings:**
-
-- We have estimated customer lifetime value (CLTV) using a well-established formula, allowing us to make informed decisions on customer relationships and resource allocation.
-- Customer segmentation based on total purchase value revealed valuable insights about different customer groups, enabling targeted marketing strategies.
-- Geographic analysis helped us understand regional preferences, customer distribution, and order cancellations in different countries.
-- Time series analysis uncovered trends and patterns in the count of orders and their correlation with total purchases.
-- Stock analysis highlighted the top 10 stock items with high orders, aiding inventory management.
-- Product descriptions analysis provided insights into the diversity of our product inventory and identified the most common descriptions and top-selling products.
-
-Feel free to connect with me on LinkedIn
-
-[![LinkedIn](https://img.shields.io/badge/Connect%20on-LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mohamed-ibrahim-513531202/)
+This project demonstrates how Customer Lifetime Value analysis can transform raw transactional data into meaningful business intelligence. By combining customer analytics, sales analysis, geographic insights, and product performance evaluation, the project provides a data-driven foundation for improving customer retention, optimizing marketing investments, and supporting strategic business decisions.
